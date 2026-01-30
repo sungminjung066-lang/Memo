@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "NeoDunggeunmo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #0b1020;
+  --bg2: #070a14;
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
+
+  --panel: rgba(15, 18, 28, 0.92);
+  --panel2: rgba(18, 22, 34, 0.92);
+
+  --edgeLight: rgba(255, 255, 255, 0.22);
+  --edge: rgba(255, 255, 255, 0.14);
+  --edgeDark: rgba(0, 0, 0, 0.55);
+
+  --accent: #7aa7ff;
+  --danger: #ff6b6b;
+
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: var(--text);
+  font-family: "NeoDunggeunmo", system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  background:
+    radial-gradient(
+      1200px 700px at 20% 20%,
+      rgba(122, 167, 255, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 600px at 80% 20%,
+      rgba(255, 107, 107, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 650px at 60% 85%,
+      rgba(140, 255, 220, 0.14),
+      transparent 60%
+    ),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   8비트 프레임 카드
+   ========================= */
+
+.app {
+  width: 620px;
+  max-width: 100%;
+}
+
+.card {
+  position: relative;
+  padding: 18px;
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
+  box-shadow: var(--shadow);
+  clip-path: polygon(
+    8px 0%,
+    calc(100% - 8px) 0%,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0% calc(100% - 8px),
+    0% 8px
+  );
+  overflow: hidden;
+}
+
+/* 픽셀 프레임 라인 */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--edgeLight), var(--edgeLight)) top/100% 2px no-repeat,
+    linear-gradient(var(--edgeLight), var(--edgeLight)) left/2px 100% no-repeat,
+    linear-gradient(var(--edgeDark), var(--edgeDark)) bottom/100% 2px no-repeat,
+    linear-gradient(var(--edgeDark), var(--edgeDark)) right/2px 100% no-repeat,
+    linear-gradient(var(--edge), var(--edge)) 6px 6px / calc(100% - 12px) 2px
+      no-repeat,
+    linear-gradient(var(--edge), var(--edge)) 6px 6px / 2px calc(100% - 12px)
+      no-repeat,
+    linear-gradient(var(--edge), var(--edge)) 6px calc(100% - 8px) /
+      calc(100% - 12px) 2px no-repeat,
+    linear-gradient(var(--edge), var(--edge)) calc(100% - 8px) 6px / 2px
+      calc(100% - 12px) no-repeat;
+}
+
+/* 반사광 A안 – 끝나면 완전 사라짐 */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0) 60%,
+    transparent 100%
+  );
+  transform: translateX(-130%);
+  opacity: 0;
+}
+
+.card:hover::after {
+  animation: shineCard 0.9s ease-out 1;
+}
+
+@keyframes shineCard {
+  0% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(130%);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   헤더 / 텍스트
+   ========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   입력 / textarea
+   ========================= */
+
+.input,
+.textarea {
+  flex: 1;
+  padding: 12px;
+  background: rgba(10, 12, 20, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.45);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* =========================
+   픽셀 버튼
+   ========================= */
+
+.btn {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  color: var(--text);
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.45),
+    0 6px 0 rgba(0, 0, 0, 0.55);
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btnPrimary {
+  background: rgba(122, 167, 255, 0.22);
+}
+
+.btnDanger {
+  background: rgba(255, 107, 107, 0.22);
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================
+   메모 리스트
+   ========================= */
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.45);
+}
+
+.itemTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.tip {
+  margin-top: 12px;
+  color: var(--muted);
+}
