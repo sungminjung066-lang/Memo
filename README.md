@@ -1,16 +1,16 @@
-# 📝 Pixel Memo App
+# 📝 픽셀 메모장 (Memo App)
 
 React + TypeScript + Vite 기반으로 제작한  
-레트로 게임 스타일 메모장 웹 앱입니다.
+레트로 스타일 메모장 웹 앱입니다.
 
 둥근모체 폰트와 8비트 프레임 UI, 픽셀 버튼을 적용해  
 게임 메뉴 같은 느낌의 인터페이스를 구현했습니다.
 
 ---
 
-## ✨ Features
+## ✨ 주요 기능
 
-### 메모 기능
+### 메모
 
 - 메모 추가
 - 메모 수정
@@ -20,7 +20,7 @@ React + TypeScript + Vite 기반으로 제작한
 ### 저장
 
 - localStorage 자동 저장
-- 새로고침 후에도 데이터 유지
+- 새로고침 후에도 메모 유지
 
 ### 키보드 단축키
 
@@ -37,17 +37,17 @@ React + TypeScript + Vite 기반으로 제작한
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 사용 기술
 
 - React
 - TypeScript
 - Vite
-- CSS (Custom Pixel UI)
+- CSS (커스텀 픽셀 UI)
 - Web Storage (localStorage)
 
 ---
 
-## 📂 Project Structure
+## 📂 프로젝트 구조
 
 ```
 memo-app/
@@ -56,13 +56,17 @@ memo-app/
 │ ├─ main.tsx
 │ └─ index.css
 ├─ public/
+├─ index.html
 ├─ package.json
+├─ package-lock.json
+├─ vite.config.ts
+├─ tsconfig.json
 └─ README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 실행 방법
 
 npm install
 npm run dev
@@ -70,28 +74,26 @@ npm run dev
 
 http://localhost:5173
 
-💾 Local Storage
+💾 데이터 저장
 메모 데이터는 브라우저 localStorage에 저장됩니다.
 
 const STORAGE_KEY = "memo-app:memos";
 
-🎮 UI Concept
+🎮 UI 컨셉
 
 - 레트로 게임 메뉴 스타일
 
-- 8bit 프레임 카드
+- 8비트 프레임 카드
 
 - 픽셀 버튼
 
 - 둥근모체 폰트
 
-📸 Preview
+📸 미리보기
+![preview](img/preview.jpg)
 
-![preview](memo-app/img/preivew.jpg)
-
-📌 Future Improvements
-
-- 메모 검색
+📌 앞으로 추가해보고 싶은 기능
+메모 검색
 
 - 즐겨찾기(핀 고정)
 
@@ -101,8 +103,8 @@ const STORAGE_KEY = "memo-app:memos";
 
 - 버튼 사운드 효과
 
-🙋‍♀️ Author
+🙋‍♀️ 제작자
 GitHub: https://github.com/sungminjung066-lang
 
-📄 License
+📄 라이선스
 MIT
