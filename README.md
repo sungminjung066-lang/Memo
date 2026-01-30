@@ -6,6 +6,12 @@ React + TypeScript + Vite 기반으로 제작한
 둥근모체 폰트와 8비트 프레임 UI, 픽셀 버튼을 적용해  
 게임 메뉴 같은 느낌의 인터페이스를 구현했습니다.
 
+## 🌐 배포 주소
+
+Vercel을 통해 배포되었습니다.
+
+👉 https://memo-app-steel.vercel.app/
+
 ---
 
 ## ✨ 주요 기능
