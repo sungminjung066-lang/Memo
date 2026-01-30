@@ -105,6 +105,3 @@ const STORAGE_KEY = "memo-app:memos";
 
 🙋‍♀️ 제작자
 GitHub: https://github.com/sungminjung066-lang
-
-📄 라이선스
-MIT
