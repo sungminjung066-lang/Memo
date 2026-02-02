@@ -57,14 +57,16 @@ Vercel을 통해 배포되었습니다.
 
 ```
 memo-app/
+├─ public/
+│ └─ img/
+│ ├─ Memo_Icon.png
+│ └─ preview.jpg
 ├─ src/
 │ ├─ App.tsx
 │ ├─ main.tsx
 │ └─ index.css
-├─ public/
 ├─ index.html
 ├─ package.json
-├─ package-lock.json
 ├─ vite.config.ts
 ├─ tsconfig.json
 └─ README.md
