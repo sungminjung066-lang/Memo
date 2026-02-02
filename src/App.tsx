@@ -82,7 +82,15 @@ function App() {
       <div className="card">
         <div className="header">
           <div>
-            <h1 className="title">📝 메모장</h1>
+            {/* ✅ 여기: 이모지 → public/img 이미지로 교체 */}
+            <h1 className="title">
+              <img
+                src="/img/Memo_Icon.png"
+                alt="메모장 아이콘"
+                className="titleIcon"
+              />
+              메모장
+            </h1>
           </div>
 
           <button
