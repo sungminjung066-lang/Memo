@@ -242,7 +242,9 @@ body {
 }
 
 .btnGhost {
-  background: rgba(255, 255, 255, 0.04);
+  height: 40px; /* ← 버튼 높이 고정 */
+  align-self: center; /* ← 헤더 안에서 세로 중앙 */
+  padding: 0 14px; /* ← 위아래 패딩 제거 */
 }
 
 /* =========================
