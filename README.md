@@ -96,7 +96,7 @@ const STORAGE_KEY = "memo-app:memos";
 - 둥근모체 폰트
 
 📸 미리보기
-![preview](img/preview.jpg)
+![preview](public/img/preview.jpg)
 
 📌 앞으로 추가해보고 싶은 기능
 메모 검색
